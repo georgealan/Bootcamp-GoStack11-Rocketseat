@@ -1,3 +1,3 @@
 # Repositório do bootcamp GoStack 9.0 Rocketseat
 
-Repositório onde se encontra todos os projetos praticos de estudo realizados durante o bootcamp.
+Repositório onde se encontram todos os projetos praticos de estudo realizados durante o bootcamp.
