@@ -1,4 +1,4 @@
-<img src="/docs/cover.jpg" alt="Bootcamp GoStack 9.0"/>
+<img src="/docs/GoStack11.png" alt="Bootcamp GoStack 9.0"/>
 
 # Repositório do bootcamp GoStack 11.0 Rocketseat
 
