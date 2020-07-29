@@ -45,6 +45,14 @@ Projeto desenvolvido durante o **Bootcamp GoStack 11** oferecido pela [Rocketsea
 
 ---
 
+## 🏆 Desafios
+
+- [Desafio 02](https://github.com/georgealan/desafio-02-conceitos-do-nodejs)
+- [Desafio 03](https://github.com/georgealan/desafio-03-conceitos-do-reactjs)
+- [Desafio 04](https://github.com/georgealan/desafio-04-conceitos-do-react-native)
+
+---
+
 ## 🦸 Autor
 
 <a href="https://blog.kodyweb.com.br/author/george/">
