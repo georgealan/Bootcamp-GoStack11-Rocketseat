@@ -3,6 +3,7 @@ import { getRepository } from 'typeorm';
 import { sign } from 'jsonwebtoken';
 import { compare } from 'bcryptjs';
 import User from '../models/User';
+import authConfig from '../config/auth';
 
 interface Request {
   email: string;
@@ -30,10 +31,13 @@ class AthenticateUserService {
       throw new Error('Incorrect email/password combination.');
     }
 
+    // Desestruturação
+    const { secret, expiresIn } = authConfig.jwt;
+
     // Usuário autenticado
-    const token = sign({}, '9b306ab04ef5e25f9fb89c998a6aedab', {
+    const token = sign({}, secret, {
       subject: user.id,
-      expiresIn: '1d',
+      expiresIn,
     });
 
     return {
