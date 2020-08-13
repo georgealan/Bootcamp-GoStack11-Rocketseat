@@ -3,6 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import User from '../models/User';
 import uploadConfig from '../config/upload';
+import AppError from '../errors/AppError';
 
 interface Request {
   user_id: string;
@@ -10,14 +11,14 @@ interface Request {
 }
 
 class UpdateUserAvatarService {
-  public async execute({ user_id, avatarFilename }: Request): Promise<void> {
+  public async execute({ user_id, avatarFilename }: Request): Promise<User> {
     // Utilizando os métodos padrão do repository do typeorm
     const usersRepository = getRepository(User);
 
     const user = await usersRepository.findOne(user_id);
 
     if (!user) {
-      throw new Error('Only authenticated users can change avatar.');
+      throw new AppError('Only authenticated users can change avatar.', 401);
     }
 
     if (user.avatar) {
@@ -29,7 +30,12 @@ class UpdateUserAvatarService {
       }
     }
 
-    // Continue Here...
+    user.avatar = avatarFilename;
+
+    // Podemos utilizar o método save também para atualizar uma entidade que já exista.
+    await usersRepository.save(user);
+
+    return user;
   }
 }
 
