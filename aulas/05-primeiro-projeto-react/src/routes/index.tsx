@@ -8,11 +8,13 @@ import Repository from '../pages/Repository';
  * sem o Switch ao entrar em uma rota seria exibido na página o conteúdo de
  * todas as rotas, tudo de uma vez, mas com o Switch isso não
  * acontece e tudo é exibido de acordo com a respectiva rota uma de cada vez.
+ *
+ * O exact é utilizado para identificação exata da roda, evitando assim ambiguidades.
  */
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={Dashboard} />
-    <Route path="/repository" component={Repository} />
+    <Route path="/repository/:repository+" component={Repository} />
   </Switch>
 );
 
